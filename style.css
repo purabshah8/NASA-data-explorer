@@ -1,0 +1,9 @@
+#apod-container {
+    height: 500px;
+    width: 750px;
+}
+
+.apod {
+    width: 1280px;
+    height: 1024px;
+}

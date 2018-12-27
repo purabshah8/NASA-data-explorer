@@ -89,16 +89,21 @@ class DOMNodeCollection {
     this.html("");
   }
 
-  append(arg) {
-    if (arg instanceof DOMNodeCollection) {
-      this.nodes.forEach ( (domNode) => {
-        arg.nodes.forEach ( (argNode) => {
-          domNode.append(argNode.outerHTML);
-        });
+
+  append(children) {
+    if (this.nodes.length === 0) return;
+    if (typeof children === 'object' && !(children instanceof DOMNodeCollection))
+      children = $k(children);
+
+    if (typeof children === 'string') {
+      this.nodes.forEach(node => {
+        node.innerHTML += children;
       });
-    } else {
-      this.nodes.forEach ( (node) => {
-        node.append(arg.outerHTML);
+    } else if (children instanceof DOMNodeCollection) {
+      this.nodes.forEach(domNode => {
+        children.nodes.forEach(childNode => {
+          domNode.appendChild(childNode.cloneNode(true));
+        });
       });
     }
   }
