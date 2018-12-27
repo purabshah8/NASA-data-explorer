@@ -174,3 +174,5 @@ class DOMNodeCollection {
     });
   }
 }
+
+export default $k;
