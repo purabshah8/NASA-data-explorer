@@ -5,14 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>NASA Data Explorer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Orbitron" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="node_modules/normalize.css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="bundle.js"></script>
 </head>
 <body>
     <main>
-        <h1>NASA Data Explorer</h1>
-        <div id="apod-container">
+        <header>
+            <h1 class="title">NASA Data Explorer</h1>
+            <span>built using <a href="https://github.com/purabshah8/kwery">Kwery</a></span>
+        </header>
+        <div id="apod-container"></div>
+        <div class="neo-container">
+            <h2>Near Earth Objects</h2>
+            <table class="neo-table">
+                <tr class="neo-row">
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Closest Approach</th>
+                    <th>Velocity</th>
+                    <th>Diameter (est.)</th>
+                    <th>Potentially Hazardous?</th>
+                </tr>
+            </table>
         </div>
     </main>
 </body>
