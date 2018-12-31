@@ -19,17 +19,22 @@
         <div id="apod-container"></div>
         <div class="neo-container">
             <h2>Near Earth Objects</h2>
-            <table class="neo-table">
-                <tr class="neo-row">
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Closest Approach</th>
-                    <th>Velocity</th>
-                    <th>Diameter (est.)</th>
-                    <th>Potentially Hazardous?</th>
-                </tr>
-            </table>
+            <form class="date-picker">
+                <input id="flatpickr" type="text" placeholder="Select Date Range..."/>
+                <button id="neo-search-button">Search</button>
+            </form>
+            <div class="table-container">
+                <table class="neo-table"></table>
+            </div>
+        </div>
+        <div class="donki-container">
+
         </div>
     </main>
+    <footer>
+        <div class="footer-links">
+            
+        </div>
+    </footer>
 </body>
 </html>

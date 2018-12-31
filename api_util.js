@@ -13,6 +13,9 @@ export const getAPOD = () => {
 };
 
 export const getNEO = (start_date, end_date) => {
+    if (!end_date) {
+        end_date = start_date;
+    }
     return $k.ajax({
         method: 'GET',
         url: 'https://api.nasa.gov/neo/rest/v1/feed',

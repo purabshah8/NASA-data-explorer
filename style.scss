@@ -1,0 +1,114 @@
+@import './node_modules/flatpickr/dist/themes/dark.css';
+body {
+    font-family: 'Merriweather Sans', sans-serif;
+    /* background: rgba(0,0,0,0.95); */
+}
+
+a {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+#apod-container {
+    height: 580px;
+    overflow: hidden;
+}
+
+.apod {
+    transform: scale(1);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    max-width: 100%;
+    /* min-width: 1280px;
+    min-height: 1024px;
+    max-height: 100%;
+    object-fit: contain; */
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    /* background: rgba(255, 255, 255, 0.6); */
+    font-size: 4em;
+    font-weight: 700;
+    /* display: inline-block; */
+    /* margin: 1em auto; */
+    /* padding: 0.1em; */
+    text-align: center;
+    max-width: 50%;
+}
+
+.neo-container {
+    background: rgba(255, 255, 255, 0.6);
+    overflow: auto;
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.neo-container h2 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+.date-picker {
+    margin: 8px auto;
+}
+
+#flatpickr {
+    width: 14em;
+}
+
+#neo-search-button {
+    border-radius: 5px;
+}
+
+#neo-search-button:hover {
+    background: #3f4458;
+    color: white;
+    cursor: pointer;
+}
+
+.table-container {
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-height: 480px;
+}
+
+.neo-table {
+    border: 1px solid black;
+}
+
+.neo-table, .neo-row th, .neo-row td {
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+
+.neo-row th {
+    color: white;
+    background: #3f4458;
+    max-width: 6em;
+}
+
+.neo-row:hover {
+    background: #f2f2f2;
+}
+
+.neo-row td {
+    text-align: center;
+    padding: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
