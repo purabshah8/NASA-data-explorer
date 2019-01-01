@@ -14,7 +14,13 @@ a:visited {
 
 header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin: 1em auto;
+}
+
+header span {
+    font-family: 'Merriweather Sans', sans-serif;
+    text-align: center;
 }
 
 #apod-container {
@@ -41,10 +47,10 @@ header {
     font-size: 4em;
     font-weight: 700;
     /* display: inline-block; */
-    /* margin: 1em auto; */
+    margin: 0 auto;
     /* padding: 0.1em; */
     text-align: center;
-    max-width: 50%;
+    // max-width: 50%;
 }
 
 .neo-container {
