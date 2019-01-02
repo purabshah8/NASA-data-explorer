@@ -1,3 +1,4 @@
+@import url('./node_modules/normalize.css/normalize.css');
 @import url('./node_modules/flatpickr/dist/themes/dark.css');
 body {
   font-family: 'Merriweather Sans', sans-serif;
@@ -56,7 +57,8 @@ header span {
 
 .sub-title {
   text-align: center;
-  font-family: 'Orbitron', sans-serif; }
+  font-family: 'Orbitron', sans-serif; 
+}
 
 .date-picker {
   margin: 8px auto; }
