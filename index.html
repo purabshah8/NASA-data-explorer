@@ -22,7 +22,7 @@
             <h2 class="sub-title">Near Earth Objects</h2>
             <form class="date-picker">
                 <input id="flatpickr" type="text" placeholder="Select Date Range..."/>
-                <button id="neo-search-button">Search</button>
+                <button id="neo-button" class="search-button">Search</button>
             </form>
             <div class="table-container">
                 <table class="neo-table"></table>
@@ -30,17 +30,21 @@
         </div>
         <div class="sub-container">
             <h2 class="sub-title">Space Weather</h2>
-            <select>
-                <option disabled selected>Select Weather Type...</option>                
-                <option value="CME">Coronal Mass Ejection</option>
-                <option value="GST">Geomagnetic Storm</option>
-                <option value="IPS">Interplanetary Shock</option>
-                <option value="FLR">Solar Flare</option>
-                <option value="SEP">Solar Energetic Particles</option>
-                <option value="MPC">Magnetopause Crossing</option>
-                <option value="RBE">Radiation Belt Enhancement</option>
-                <option value="HSS">High Speed Stream</option>
-            </select>
+            <form>
+                <select>
+                    <option disabled selected>Select Weather Type...</option>                
+                    <option value="CME">Coronal Mass Ejection</option>
+                    <option value="GST">Geomagnetic Storm</option>
+                    <option value="IPS">Interplanetary Shock</option>
+                    <option value="FLR">Solar Flare</option>
+                    <option value="SEP">Solar Energetic Particles</option>
+                    <option value="MPC">Magnetopause Crossing</option>
+                    <option value="RBE">Radiation Belt Enhancement</option>
+                    <option value="HSS">High Speed Stream</option>
+                </select>
+                <input id="flatpickr-2" type="text" placeholder="Select Date Range...">
+                <button id="donki-button" class="search-button">Search</button>
+            </form>
         </div>
     </main>
     <footer>

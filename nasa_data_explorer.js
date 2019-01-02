@@ -14,13 +14,19 @@ $k( () => {
         fetchAllNEOs(dates[0], dates[1]);
         console.log('hit callback!');
     };
+    let searchDONKICallback = e => {
+        e.preventDefault();
+        const fp = $k('#flapickr-2');
+    };
     APIUtil.getAPOD().then(res => {
         const apodURL = res.hdurl;
         const $apod = $k('#apod-container');
         $apod.append(`<img src="${apodURL}" class="apod"/>`);
     });
-    const $searchButton = $k('#neo-search-button');
-    $searchButton.on('click', searchNEOCallback);
+    const $searchNEO = $k('#neo-button');
+    $searchNEO.on('click', searchNEOCallback);
+    const $searchDONKI = $k('#donki-button');
+    $searchDONKI.on('click', searchDONKICallback);
 });
 
 const fetchAllNEOs = (startDate, endDate) => {

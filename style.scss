@@ -1,5 +1,6 @@
 @import './node_modules/normalize.css/normalize.css';
 @import './node_modules/flatpickr/dist/themes/dark.css';
+
 body {
     font-family: 'Merriweather Sans', sans-serif;
     /* background: rgba(0,0,0,0.95); */
@@ -60,6 +61,7 @@ header span {
     padding: 3em;
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 90%;
     margin: 0 auto;
 }
@@ -77,11 +79,11 @@ header span {
     width: 14em;
 }
 
-#neo-search-button {
+.search-button {
     border-radius: 5px;
 }
 
-#neo-search-button:hover {
+.search-button:hover {
     background: #3f4458;
     color: white;
     cursor: pointer;
