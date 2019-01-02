@@ -6,8 +6,8 @@
     <title>NASA Data Explorer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="./NASA_logo.png"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Orbitron" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="./node_modules/normalize.css/normalize.css" /> -->
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="bundle.js"></script>
 </head>
@@ -17,7 +17,7 @@
             <h1 class="title">NASA Data Explorer</h1>
             <span>built using <a href="https://github.com/purabshah8/kwery">Kwery</a></span>
         </header>
-        <div id="apod-container"></div>
+        <div id="apod-container">Loading image...</div>
         <div class="sub-container">
             <h2 class="sub-title">Near Earth Objects</h2>
             <form class="date-picker">
@@ -25,32 +25,27 @@
                 <button id="neo-button" class="search-button">Search</button>
             </form>
             <div class="table-container">
-                <table class="neo-table"></table>
+                <table class="neo-table data-table"></table>
             </div>
         </div>
         <div class="sub-container">
-            <h2 class="sub-title">Space Weather</h2>
+            <h2 class="sub-title">Exoplanets</h2>
             <form>
-                <select>
-                    <option disabled selected>Select Weather Type...</option>                
-                    <option value="CME">Coronal Mass Ejection</option>
-                    <option value="GST">Geomagnetic Storm</option>
-                    <option value="IPS">Interplanetary Shock</option>
-                    <option value="FLR">Solar Flare</option>
-                    <option value="SEP">Solar Energetic Particles</option>
-                    <option value="MPC">Magnetopause Crossing</option>
-                    <option value="RBE">Radiation Belt Enhancement</option>
-                    <option value="HSS">High Speed Stream</option>
-                </select>
-                <input id="flatpickr-2" type="text" placeholder="Select Date Range...">
-                <button id="donki-button" class="search-button">Search</button>
+                <input id="exo-distance" type="number" placeholder="Distance (Parsecs)">
+                <button id="exo-button" class="search-button">Search</button>
             </form>
+            <div class="table-container">
+                <table class="exo-table data-table"></table>
+            </div>
         </div>
     </main>
     <footer>
         <div class="footer-links">
-            
+            <a href="https://github.com/purabshah8"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/purab-shah-987717b5/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://purabshah8.github.io/"><i class="fas fa-user"></i></a>
         </div>
+        <span>Created by Purab Shah</span>
     </footer>
 </body>
 </html>

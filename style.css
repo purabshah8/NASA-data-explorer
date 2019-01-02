@@ -52,7 +52,7 @@ header span {
   padding: 3em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   width: 90%;
   margin: 0 auto; }
 
@@ -60,7 +60,7 @@ header span {
   text-align: center;
   font-family: 'Orbitron', sans-serif; }
 
-.date-picker {
+.sub-container form {
   margin: 8px auto; }
 
 #flatpickr {
@@ -79,26 +79,40 @@ header span {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-height: 480px; }
+  max-height: 480px;
+  width: 100%; }
 
-.neo-table {
+.data-table {
   border: 1px solid black; }
 
-.neo-table, .neo-row th, .neo-row td {
+.data-table, .data-row th, .data-row td {
   border-bottom: 1px solid black;
   border-collapse: collapse; }
 
-.neo-row th {
+.data-row th {
   color: white;
   background: #3f4458;
-  max-width: 6em; }
+  max-width: 6em;
+  padding: 2px; }
 
-.neo-row:hover {
+.data-row:hover {
   background: #f2f2f2; }
 
-.neo-row td {
+.data-row td {
   text-align: center;
   padding: 4px;
   font-family: Arial, Helvetica, sans-serif; }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+footer > * {
+  margin: 8px auto; }
+
+i {
+  font-size: 24px;
+  margin-right: 8px; }
 
 /*# sourceMappingURL=style.css.map */

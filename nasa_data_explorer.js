@@ -12,11 +12,13 @@ $k( () => {
         const fp = $k('#flatpickr');
         const dates = fp.nodes[0].value.split(" to ");
         fetchAllNEOs(dates[0], dates[1]);
-        console.log('hit callback!');
     };
-    let searchDONKICallback = e => {
+
+    let searchExoCallback = e => {
         e.preventDefault();
-        const fp = $k('#flapickr-2');
+        const $distanceInput = $k('#exo-distance');
+        const distance = $distanceInput.nodes[0].value;
+        fetchExoplanets(distance);
     };
     APIUtil.getAPOD().then(res => {
         const apodURL = res.hdurl;
@@ -25,8 +27,8 @@ $k( () => {
     });
     const $searchNEO = $k('#neo-button');
     $searchNEO.on('click', searchNEOCallback);
-    const $searchDONKI = $k('#donki-button');
-    $searchDONKI.on('click', searchDONKICallback);
+    const $searchExo = $k('#exo-button');
+    $searchExo.on('click', searchExoCallback);
 });
 
 const fetchAllNEOs = (startDate, endDate) => {
@@ -35,7 +37,7 @@ const fetchAllNEOs = (startDate, endDate) => {
     }
     const $neoTable = $k('.neo-table');
     $neoTable.empty();
-    $neoTable.append(`<thead><tr class="neo-row"> 
+    $neoTable.append(`<thead><tr class="data-row"> 
                         <th>Name</th>
                         <th>Date</th>
                         <th>Closest Approach</th>
@@ -51,14 +53,11 @@ const fetchAllNEOs = (startDate, endDate) => {
         let begin = new Date(start);
         let mid = new Date(start);
         mid.setDate(mid.getDate() + 7);
-        debugger;
         while ((end-begin)/86400000 > 7) {
-            debugger;
             fetchNEOs(dateToString(begin), dateToString(mid));
             begin = new Date(mid.valueOf());
             begin.setDate(begin.getDate() + 1);
             mid.setDate(mid.getDate() + 7);
-            debugger;
         }
         fetchNEOs(dateToString(mid), endDate);
     } else {
@@ -68,7 +67,6 @@ const fetchAllNEOs = (startDate, endDate) => {
 
 function fetchNEOs(startDate, endDate) {
     APIUtil.getNEO(startDate, endDate).then(res => {
-        const count = res.element_count;
         const dates = Object.values(res.near_earth_objects);
         dates.forEach(date => {
             date.forEach(neo => {
@@ -83,7 +81,7 @@ function fetchNEOs(startDate, endDate) {
                 const velocity = closeApproachData.relative_velocity.kilometers_per_second;
                 const hazardous = neo.is_potentially_hazardous_asteroid ? "Yes" : "No";
                 const $neoTable = $k('.neo-table');
-                $neoTable.append(`<tr class="neo-row">
+                $neoTable.append(`<tr class="data-row">
                                     <td>${neo.name}</td>
                                     <td>${closeApproachData.close_approach_date}</td>
                                     <td>${closestApproach} km</td>
@@ -96,11 +94,42 @@ function fetchNEOs(startDate, endDate) {
     });
 }
 
+function fetchExoplanets(distance) {
+    const $exoTable = $k('.exo-table');
+    $exoTable.empty();
+    $exoTable.append(`
+        <tr class="data-row">
+            <th>Planet Name</th>
+            <th>Discovery Method</th>
+            <th>Distance</th>
+            <th>Estimated Mass</th>
+            <th>Orbital Period (days)</th>
+            <th>Star</th>
+        </tr>
+    `);
+
+    APIUtil.getExoplanets(distance).then(exoplanets => {
+        console.log(exoplanets);
+        exoplanets.forEach(planet => {
+            const mass = planet.pl_bmassj * 318.02345;
+            $exoTable.append(`
+                <tr class="data-row">
+                    <td>${planet.pl_name}</td>
+                    <td>${planet.pl_discmethod}</td>
+                    <td>${planet.st_dist.toFixed(2)} pc</td>
+                    <td>${(Math.round(mass*1000)/1000).toFixed(3)} Earths</td>
+                    <td>${(Math.round(planet.pl_orbper*1000)/1000).toFixed(1)}</td>
+                    <td>${planet.pl_hostname}</td>
+                </tr>
+            `);
+        });
+    });
+}
+
 function dateToString(date) {
     return date.toJSON().split('T')[0];
 }
 
 function addCommas(num) {
-    // debugger
     return num.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

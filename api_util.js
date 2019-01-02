@@ -26,3 +26,10 @@ export const getNEO = (start_date, end_date) => {
         }
     });
 };
+
+export const getExoplanets = (dist) => {
+    return $k.ajax({
+        method: 'GET',
+        url: `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&where=st_dist%3C${dist}&format=json`
+    });
+};
