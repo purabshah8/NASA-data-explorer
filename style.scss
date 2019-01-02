@@ -25,9 +25,14 @@ header span {
     text-align: center;
 }
 
+header a {
+    text-decoration: underline;
+}
+
 #apod-container {
     height: 580px;
     overflow: hidden;
+    text-align: center;
 }
 
 .apod {

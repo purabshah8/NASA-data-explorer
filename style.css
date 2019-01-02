@@ -20,9 +20,13 @@ header span {
   font-family: 'Merriweather Sans', sans-serif;
   text-align: center; }
 
+header a {
+  text-decoration: underline; }
+
 #apod-container {
   height: 580px;
-  overflow: hidden; }
+  overflow: hidden;
+  text-align: center; }
 
 .apod {
   transform: scale(1);
