@@ -1,4 +1,4 @@
-@import url(./node_modules/flatpickr/dist/themes/dark.css);
+@import url('./node_modules/flatpickr/dist/themes/dark.css');
 body {
   font-family: 'Merriweather Sans', sans-serif;
   /* background: rgba(0,0,0,0.95); */ }
@@ -45,7 +45,7 @@ header span {
   /* padding: 0.1em; */
   text-align: center; }
 
-.neo-container {
+.sub-container {
   background: rgba(255, 255, 255, 0.6);
   overflow: auto;
   padding: 3em;
@@ -54,7 +54,7 @@ header span {
   width: 90%;
   margin: 0 auto; }
 
-.neo-container h2 {
+.sub-title {
   text-align: center;
   font-family: 'Orbitron', sans-serif; }
 

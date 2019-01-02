@@ -53,7 +53,7 @@ header span {
     // max-width: 50%;
 }
 
-.neo-container {
+.sub-container {
     background: rgba(255, 255, 255, 0.6);
     overflow: auto;
     padding: 3em;
@@ -63,10 +63,11 @@ header span {
     margin: 0 auto;
 }
 
-.neo-container h2 {
+.sub-title {
     text-align: center;
     font-family: 'Orbitron', sans-serif;
 }
+
 .date-picker {
     margin: 8px auto;
 }

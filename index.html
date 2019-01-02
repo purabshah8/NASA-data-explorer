@@ -18,8 +18,8 @@
             <span>built using <a href="https://github.com/purabshah8/kwery">Kwery</a></span>
         </header>
         <div id="apod-container"></div>
-        <div class="neo-container">
-            <h2>Near Earth Objects</h2>
+        <div class="sub-container">
+            <h2 class="sub-title">Near Earth Objects</h2>
             <form class="date-picker">
                 <input id="flatpickr" type="text" placeholder="Select Date Range..."/>
                 <button id="neo-search-button">Search</button>
@@ -28,8 +28,19 @@
                 <table class="neo-table"></table>
             </div>
         </div>
-        <div class="donki-container">
-
+        <div class="sub-container">
+            <h2 class="sub-title">Space Weather</h2>
+            <select>
+                <option disabled selected>Select Weather Type...</option>                
+                <option value="CME">Coronal Mass Ejection</option>
+                <option value="GST">Geomagnetic Storm</option>
+                <option value="IPS">Interplanetary Shock</option>
+                <option value="FLR">Solar Flare</option>
+                <option value="SEP">Solar Energetic Particles</option>
+                <option value="MPC">Magnetopause Crossing</option>
+                <option value="RBE">Radiation Belt Enhancement</option>
+                <option value="HSS">High Speed Stream</option>
+            </select>
         </div>
     </main>
     <footer>
