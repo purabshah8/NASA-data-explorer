@@ -26,9 +26,13 @@ header a {
 #apod-container {
   height: 580px;
   overflow: hidden;
-  text-align: center; }
+  display: flex; }
 
-.apod {
+#apod-container span {
+  text-align: center;
+  display: block; }
+
+.apod, #apod-container span {
   transform: scale(1);
   position: relative;
   top: 50%;

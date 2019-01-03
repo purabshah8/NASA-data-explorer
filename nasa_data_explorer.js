@@ -23,6 +23,7 @@ $k( () => {
     APIUtil.getAPOD().then(res => {
         const apodURL = res.hdurl;
         const $apod = $k('#apod-container');
+        $apod.empty();
         $apod.append(`<img src="${apodURL}" class="apod"/>`);
     });
     const $searchNEO = $k('#neo-button');
@@ -109,7 +110,6 @@ function fetchExoplanets(distance) {
     `);
 
     APIUtil.getExoplanets(distance).then(exoplanets => {
-        console.log(exoplanets);
         exoplanets.forEach(planet => {
             const mass = planet.pl_bmassj * 318.02345;
             $exoTable.append(`
