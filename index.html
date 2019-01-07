@@ -16,9 +16,13 @@
         <header>
             <h1 class="title">NASA Data Explorer</h1>
             <span>built using <a href="https://github.com/purabshah8/kwery">Kwery</a></span>
+            <div class="search-links">
+                <a href="#neo-search">Find Near Earth Objects</a>
+                <a href="#exo-search">Find Exoplanets</a>
+            </div>
         </header>
         <div id="apod-container"><span>Loading image...</span></div>
-        <div class="sub-container">
+        <div id="neo-search" class="sub-container">
             <h2 class="sub-title">Near Earth Objects</h2>
             <form class="date-picker">
                 <input id="flatpickr" type="text" placeholder="Select Date Range..."/>
@@ -28,7 +32,7 @@
                 <table class="neo-table data-table"></table>
             </div>
         </div>
-        <div class="sub-container">
+        <div id="exo-search" class="sub-container">
             <h2 class="sub-title">Exoplanets</h2>
             <form>
                 <input id="exo-distance" type="number" placeholder="Distance (Parsecs)">

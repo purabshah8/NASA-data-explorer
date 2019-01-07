@@ -23,6 +23,21 @@ header span {
 header a {
   text-decoration: underline; }
 
+.search-links {
+  display: flex;
+  justify-content: space-around; }
+
+.search-links a {
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 4px; }
+
+.search-links a:hover {
+  border: 1px solid #3f4458;
+  background: #3f4458;
+  color: white; }
+
 #apod-container {
   height: 580px;
   overflow: hidden;
@@ -79,6 +94,7 @@ header a {
 
 .search-button:hover {
   background: #3f4458;
+  border: 1px solid #3f4458;
   color: white;
   cursor: pointer; }
 
