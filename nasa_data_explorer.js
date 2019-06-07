@@ -22,9 +22,11 @@ $k( () => {
     };
     APIUtil.getAPOD().then(res => {
         const apodURL = res.hdurl;
-        const $apod = $k('#apod-container');
+        const $apod = $k('#pic-container');
         $apod.empty();
-        $apod.append(`<img src="${apodURL}" class="apod"/>`);
+        $apod.append(`<img src="${apodURL}" class="apod" alt=${res.explanation}/>`);
+        $apod.parent().append(`<div class="apod-description">${res.explanation}</div>`);
+
     });
     const $searchNEO = $k('#neo-button');
     $searchNEO.on('click', searchNEOCallback);

@@ -7,37 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="./NASA_logo.png"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Orbitron" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Orbitron|Rajdhani" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="bundle.js"></script>
 </head>
 <body>
     <main>
-        <header>
-            <h1 class="title">NASA Data Explorer</h1>
-            <span>built using <a href="https://github.com/purabshah8/kwery">Kwery</a></span>
-            <div class="search-links">
-                <a href="#neo-search">Find Near Earth Objects</a>
-                <a href="#exo-search">Find Exoplanets</a>
-            </div>
-        </header>
-        <div id="apod-container"><span>Loading image...</span></div>
+        <nav>
+            <div class="page-title">NASA Data Explorer</div>
+            <ul class="nav-links">
+                <a href="#neo-search"><li>NEOs</li></a>
+                <a href="#exo-search"><li>Exoplanets</li></a>
+                <a href="https://github.com/purabshah8/kwery"><li>Kwery</li></a>
+            </ul>
+        </nav>
+        <div class="apod-container">
+            <div id="pic-container"><span>Loading image...</span></div>
+            <h3>Astronomy Picture of the Day</h3>
+        </div>
         <div id="neo-search" class="sub-container">
-            <h2 class="sub-title">Near Earth Objects</h2>
-            <form class="date-picker">
-                <input id="flatpickr" type="text" placeholder="Select Date Range..."/>
-                <button id="neo-button" class="search-button">Search</button>
-            </form>
+            <div class="sub-title-container">
+                <div class="sub-title">Near Earth Objects</div>
+                <form class="date-picker">
+                    <input id="flatpickr" type="text" placeholder="Select Date Range..."/>
+                    <button id="neo-button" class="search-button">Search</button>
+                </form>
+            </div>
+            <div class="description">Find objects whose closest approach to the Earth falls in the selected date range.</div>
             <div class="table-container">
                 <table class="neo-table data-table"></table>
             </div>
         </div>
         <div id="exo-search" class="sub-container">
-            <h2 class="sub-title">Exoplanets</h2>
-            <form>
-                <input id="exo-distance" type="number" placeholder="Distance (Parsecs)">
-                <button id="exo-button" class="search-button">Search</button>
-            </form>
+            <div class="sub-title-container">
+                    <div class="sub-title">Exoplanets</div>
+                    <form>
+                        <input id="exo-distance" type="number" placeholder="Distance (Parsecs)">
+                        <button id="exo-button" class="search-button">Search</button>
+                    </form>
+            </div>
+            <div class="description">Find Exoplanets within the given search distance. 1 parsec = 3.26 light-years </div>
             <div class="table-container">
                 <table class="exo-table data-table"></table>
             </div>
