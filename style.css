@@ -214,8 +214,8 @@ form input:focus {
 
 footer {
   display: flex;
-  flex-direction: row;
-  /* align-items: center;  */
+  flex-direction: column;
+  align-items: center; 
 }
 
 footer > * {
