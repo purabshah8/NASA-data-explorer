@@ -135,7 +135,9 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto; 
+  padding-left: 1rem;
+}
 
 .sub-title-container {
   display: flex;
@@ -223,6 +225,29 @@ footer > * {
 
 i {
   font-size: 24px;
-  margin-right: 8px; }
+  margin-right: 8px; 
+}
 
+.welcome {
+  text-align: center;
+  padding: 1rem;
+  font-size: .8rem;
+  /* width: 50%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sub-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 /*# sourceMappingURL=style.css.map */
